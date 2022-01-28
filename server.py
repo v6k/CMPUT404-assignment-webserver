@@ -40,6 +40,7 @@ class MyWebServer(socketserver.BaseRequestHandler):
         file = ""
         if method != "GET":
             self.request.sendall(bytearray("HTTP/1.1 405 Method Not Allowed\r\n",'utf-8'))
+            return
         else:
             try:           
                 if browserPath[-1] == "/":
